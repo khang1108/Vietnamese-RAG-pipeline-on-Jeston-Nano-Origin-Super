@@ -21,11 +21,10 @@ class VNSbert(BaseEmbedder):
         except Exception as e:
             logger.error(f"[Model] Cannot load {self.model_name}. Please check again.")
     
-    def embed_query(self, query: str) -> np.ndarray:
-        logger.info(f"[Embedding] Embedding query {query} by {self.model_name}")
-
+    def embed_text(self, text: str) -> np.ndarray:
         #TODO: In furture, there will be some functions to rewrite and expand the query for better qualification. But at now, I just write this function in basic
+        logger.info(f"[Embedding] Embedding query {text} by {self.model_name}")
+        return self.model.encode(text, convert_to_numpy=True).astype(np.float32)
 
-        embeddings = self.model.encode(query)
-
-        return embeddings
+    def embed_texts(self, texts: list[str]) -> np.ndarray:
+        return self.model.encode(texts, convert_to_numpy=True).astype(np.float32)

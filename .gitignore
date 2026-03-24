@@ -2,3 +2,7 @@ models/
 docs/
 .vscode/
 */__pycache__/
+storage/
+data/
+logs/
+__pycache__

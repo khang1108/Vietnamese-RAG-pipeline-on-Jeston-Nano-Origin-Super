@@ -2,3 +2,35 @@
 2026-03-24 11:26:54 | SUCCESS  | __main__:<module>:5 - Vector DB đã sẵn sàng (10,000 chunks)!
 2026-03-24 11:26:54 | WARNING  | __main__:<module>:7 - Cảnh báo: CPU Jetson đang ở mức 85%, cân nhắc giảm batch_size!
 2026-03-24 11:26:54 | ERROR    | __main__:<module>:8 - Lỗi: Không tìm thấy file qwen-1.5b-chat.gguf trong thư mục models/
+2026-03-24 22:58:51 | INFO     | __main__:main:36 - [App] Starting Vietnamese RAG pipeline...
+2026-03-24 22:59:31 | SUCCESS  | adapters.embedders.VNSbert:__init__:20 - [Model] Successfully loaded keepitreal/vietnamese-sbert.
+2026-03-24 23:05:48 | INFO     | __main__:main:78 - [App] Starting Vietnamese RAG pipeline...
+2026-03-24 23:05:54 | SUCCESS  | adapters.embedders.VNSbert:__init__:20 - [Model] Successfully loaded keepitreal/vietnamese-sbert.
+2026-03-24 23:05:54 | INFO     | __main__:get_or_create_vector_db:48 - [App] No index found. Building a new index from data/chunks.json...
+2026-03-24 23:06:10 | SUCCESS  | services.indexing_service:index_chunks:14 - [Indexing] Successfully indexed 50 chunks
+2026-03-24 23:06:10 | SUCCESS  | adapters.vector_stores.faiss_store:add_chunks:61 - [VectorDB] Successfully added 50 chunks. Current total: 50
+2026-03-24 23:06:10 | SUCCESS  | adapters.vector_stores.faiss_store:save:119 - [VectorDB] Successfully saved index to storage/faiss/local.index and metadata to storage/faiss/chunks.json
+2026-03-24 23:06:10 | SUCCESS  | services.indexing_service:index_chunks:18 - [Indexing] Saved index to ./storage/faiss
+2026-03-24 23:06:16 | SUCCESS  | adapters.llms.qwenllm:__init__:50 - [Local Model] Successfully loaded Qwen model from ./models/qwen2.5-3b-instruct-q5_k_m.gguf
+2026-03-24 23:07:36 | INFO     | pipeline.rag_pipeline:retrieve:18 - [Info] User asked: Hãy trình bày một số phép biến đổi đồ thị...
+2026-03-24 23:07:36 | INFO     | adapters.embedders.VNSbert:embed_text:26 - [Embedding] Embedding query Hãy trình bày một số phép biến đổi đồ thị by keepitreal/vietnamese-sbert
+2026-03-24 23:07:36 | SUCCESS  | pipeline.rag_pipeline:retrieve:27 - [RAG] Successfully retrieved 3 / 3 in 0.3723
+2026-03-24 23:07:36 | ERROR    | pipeline.rag_pipeline:generate:42 - [RAG] Got an unknown error: Requested tokens (5573) exceed context window of 2048
+2026-03-24 23:10:09 | INFO     | __main__:main:77 - [App] Starting Vietnamese RAG pipeline...
+2026-03-24 23:10:16 | SUCCESS  | adapters.embedders.VNSbert:__init__:20 - [Model] Successfully loaded keepitreal/vietnamese-sbert.
+2026-03-24 23:10:16 | INFO     | __main__:get_or_create_vector_db:43 - [App] Found existing FAISS index at ./storage/faiss. Loading...
+2026-03-24 23:10:16 | SUCCESS  | adapters.vector_stores.faiss_store:load:152 - [VectorDB] Successfully loaded 50 vectors from storage/faiss/local.index
+2026-03-24 23:10:20 | SUCCESS  | adapters.llms.qwenllm:__init__:50 - [Local Model] Successfully loaded Qwen model from ./models/qwen2.5-3b-instruct-q5_k_m.gguf
+2026-03-24 23:10:52 | INFO     | pipeline.rag_pipeline:retrieve:18 - [Info] User asked: Hãy trình bày cho tôi một số phép biến đổi đồ thị...
+2026-03-24 23:10:52 | INFO     | adapters.embedders.VNSbert:embed_text:26 - [Embedding] Embedding query Hãy trình bày cho tôi một số phép biến đổi đồ thị by keepitreal/vietnamese-sbert
+2026-03-24 23:10:52 | SUCCESS  | pipeline.rag_pipeline:retrieve:27 - [RAG] Successfully retrieved 3 / 3 in 0.1759
+2026-03-24 23:14:47 | SUCCESS  | pipeline.rag_pipeline:generate:40 - [RAG] Successfully generated response for user's query
+2026-03-24 23:21:41 | INFO     | __main__:main:77 - [App] Starting Vietnamese RAG pipeline...
+2026-03-24 23:21:51 | SUCCESS  | adapters.embedders.VNSbert:__init__:20 - [Model] Successfully loaded keepitreal/vietnamese-sbert.
+2026-03-24 23:21:51 | INFO     | __main__:get_or_create_vector_db:43 - [App] Found existing FAISS index at ./storage/faiss. Loading...
+2026-03-24 23:21:51 | SUCCESS  | adapters.vector_stores.faiss_store:load:152 - [VectorDB] Successfully loaded 50 vectors from storage/faiss/local.index
+2026-03-24 23:21:57 | SUCCESS  | adapters.llms.qwenllm:__init__:50 - [Local Model] Successfully loaded Qwen model from ./models/qwen2.5-3b-instruct-q5_k_m.gguf
+2026-03-24 23:22:11 | INFO     | pipeline.rag_pipeline:retrieve:18 - [Info] User asked: Hãy trình bày các phép biến đổi đồ thị...
+2026-03-24 23:22:11 | INFO     | adapters.embedders.VNSbert:embed_text:26 - [Embedding] Embedding query Hãy trình bày các phép biến đổi đồ thị by keepitreal/vietnamese-sbert
+2026-03-24 23:22:11 | SUCCESS  | pipeline.rag_pipeline:retrieve:27 - [RAG] Successfully retrieved 3 / 3 in 0.4242
+2026-03-24 23:28:26 | SUCCESS  | pipeline.rag_pipeline:generate:40 - [RAG] Successfully generated response for user's query
